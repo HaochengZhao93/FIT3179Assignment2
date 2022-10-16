@@ -1,0 +1,25 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Changes in Temperature rates in 5 countries",
+  "width": 500,
+  
+  "data": {
+    "url": "https://raw.githubusercontent.com/HaochengZhao93/FIT3179Assignment2/main/Temprate1.csv",
+    "format": {"type": "csv"}
+  },
+  "encoding": {"color": {"field": "Country", "type": "nominal"}},
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {"field": "Year", "type": "nominal", "title": "year"},
+        "y": {
+          "field": "Temp_rate",
+          "type": "quantitative",
+          "title": "Temperature_rate"
+        }
+      }
+    }
+  ],
+  "config": {"view": {"stroke": null}}
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "How population effect temperature",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/HaochengZhao93/FIT3179Assignment2/main/people.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": "circle",
+  "encoding": {
+    "y": {"field": "Date", "type": "nominal", "title": "Population in 2020"},
+    "x": {"field": "Country", "type": "nominal"},
+    "size": {"field": "Population", "type": "quantitative"}
+  }
+}

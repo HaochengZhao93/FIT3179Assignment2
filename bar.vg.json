@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "How many countries are effected by temperature change in wordwide",
+  "width": 800,
+  "data": {
+    "url": "https://raw.githubusercontent.com/HaochengZhao93/Fit3179HomeWork/main/Environment_Temperature_change_E_All_Data_NOFLAG.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {"filter": "datum.Element!=='standard deviation'"},
+    {"filter": "datum.Y1961"},
+    {"calculate": "parseInt(parseFloat(datum.Y1961)*10)/10", "as": "Y1961"}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Y1961"},
+    "y": {"field": "Area", "title": "count of country", "aggregate": "count"}
+  },
+  "params": [
+    {
+      "name": "year_select",
+      "value": "Y1961",
+      "bind": {
+        "input": "select",
+        "options": ["Y1961", "Y1962", "Y1963", "Y1964"],
+        "labels": ["Y1961", "Y1962", "Y1963", "Y1964"],
+        "name": "Year Select: "
+      }
+    }
+  ],
+  "config": {}
+}

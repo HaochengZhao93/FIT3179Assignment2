@@ -1,0 +1,21 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  
+  "title": "Changes in CO2 emissions in 5 countries",
+  "data": {
+    "url": "https://raw.githubusercontent.com/HaochengZhao93/FIT3179Assignment2/main/co22.csv",
+    "format": {"type": "csv"}
+  },
+  "encoding": {"color": {"field": "Country", "type": "nominal"}},
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {"field": "Year", "type": "nominal", "title": "year"},
+        "y": {"field": "Value", "type": "quantitative", "title": "C02 Emission"}
+      }
+    }
+  ],
+  "config": {"view": {"stroke": null}}
+}
